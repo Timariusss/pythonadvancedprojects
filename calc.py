@@ -2,7 +2,7 @@ ch1 = float(input("Первое число: "))
 
 while True:
     op = input("Операция (+, -, *, /, %, //) или 'q' для выхода: ")
-    op = input("Операция (+, -, *, /, %, //) или 'q' для выхода: ")
+   
     
     if op == 'q':
         break
@@ -21,10 +21,8 @@ while True:
         result = ch1 % ch2
     elif op == '//':
         result = ch1 // ch2
-    elif op == '%':
-        result = ch1 % ch2
-    elif op == '//':
-        result = ch1 // ch2
+   
+   
     
     print(f"Результат: {result}")   
-    print(f"Результат: {result}")   
+    
