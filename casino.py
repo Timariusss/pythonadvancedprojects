@@ -11,7 +11,7 @@ def play_game():
     
     while money > 0 and money < 1000:
         print(f'\nyou have ${money}')
-        print('you can choose a game to play: 1-dice, 2-coin flip, 3-card draw')
+        print('you can choose a game to play: 1-dice, 2-coin flip, 3-card draw, 4 - crush')
         game = int(input('enter the number of the game you want to play: '))
         
         if game == 1:
@@ -49,6 +49,17 @@ def play_game():
             else:
                 print('you guessed wrong! you lost 200 dollars')
                 money -= 200
+        elif game == 4:
+            print('you chose crush')
+            print('you will select the cofficient of the crush, if you guess right or cofficient is higher than your option, you will get the money multiplied by the cofficient, if you guess wrong and cofficient is lower than your option, you will lose all your money')
+            coefficient = random.randint(1, 3)
+            guess = float(input('guess the coefficient (1-3): '))
+            if guess == coefficient or guess > coefficient:
+                money *= coefficient
+                print(f'you guessed right! your money is multiplied by {coefficient}')
+            else:
+                money = 0
+                print('you guessed wrong! you lost all your money')
     
     print(f'\nGame Over! You have ${money}')
     if money <= 0:
